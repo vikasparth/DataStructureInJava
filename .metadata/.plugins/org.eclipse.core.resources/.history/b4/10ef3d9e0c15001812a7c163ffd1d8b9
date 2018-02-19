@@ -1,0 +1,7 @@
+package com.vikas.crackingcodinginterview;
+
+public class SingleLinkNode {
+public int data ;
+public SingleLinkNode next ;	
+	
+}
