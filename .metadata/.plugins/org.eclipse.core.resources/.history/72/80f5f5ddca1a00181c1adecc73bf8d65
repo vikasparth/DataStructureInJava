@@ -93,7 +93,7 @@ public class Chapter1 {
      }*/
      
      /*Below is the code to use and test Stack implementation*/
-    StackVik st = new StackVik();
+    /* StackVik st = new StackVik();
      int num;
      st.peek();
      st.pop();
@@ -113,7 +113,7 @@ public class Chapter1 {
     	 System.out.format("%d,",num);
     	 
      }   
-
+     */
      
     SingleLinkedListVik sllv = new SingleLinkedListVik();
     sllv.addnode(10);
@@ -132,8 +132,8 @@ public class Chapter1 {
     }
     System.out.println("");
     Chapter3 ch3 = new Chapter3();
-    ch3.RmvDuplctFrmLinkedListApproach1(sllv);
-    //ch3.RmvDuplctFrmLinkedListApproach2(sllv);
+    //ch3.RmvDuplctFrmLinkedListApproach1(sllv);
+    ch3.RmvDuplctFrmLinkedListApproach2(sllv);
     
     System.out.println("Linked list after removal of node is as below");
     runner = sllv.header;

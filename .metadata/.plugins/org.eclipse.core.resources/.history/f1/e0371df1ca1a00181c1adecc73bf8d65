@@ -93,7 +93,7 @@ public class Chapter1 {
      }*/
      
      /*Below is the code to use and test Stack implementation*/
-    StackVik st = new StackVik();
+    /* StackVik st = new StackVik();
      int num;
      st.peek();
      st.pop();
@@ -113,7 +113,7 @@ public class Chapter1 {
     	 System.out.format("%d,",num);
     	 
      }   
-
+     */
      
     SingleLinkedListVik sllv = new SingleLinkedListVik();
     sllv.addnode(10);

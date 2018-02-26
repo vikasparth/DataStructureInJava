@@ -144,10 +144,10 @@ public class SingleLinkedListVik {
 		{
 			SingleLinkNode node = new SingleLinkNode(value);
 			SingleLinkNode runner = this.header;
-			//SingleLinkNode previous = this.header;
+			SingleLinkNode previous = this.header;
 			while(runner.data!=after && runner.next!=null)
 			{
-				//previous = runner;
+				previous = runner;
 				runner = runner.next;				
 			}
 			if(runner.data==after)
