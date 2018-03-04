@@ -93,61 +93,80 @@ public class Chapter1 {
      }*/
      
      /*Below is the code to use and test Stack implementation*/
-    StackVik st = new StackVik();
-     int num;
-     st.peek();
-     st.pop();
-     st.push(7);
-     st.push(54);
-     st.push(6);
-     st.push(97);
-     st.push(100);
+//    StackVik st = new StackVik();
+//     int num;
+//     st.peek();
+//     st.pop();
+//     st.push(7);
+//     st.push(54);
+//     st.push(6);
+//     st.push(97);
+//     st.push(100);
+//
+//    num = st.peek();
+//    System.out.format("%d,",num);
+//  
+//     System.out.println("The popped elements are as below");
+//     while(!st.isEmpty())
+//     {
+//    	 num = st.pop();
+//    	 System.out.format("%d,",num);
+//    	 
+//     }   
 
-    num = st.peek();
-    System.out.format("%d,",num);
-  
-     System.out.println("The popped elements are as below");
-     while(!st.isEmpty())
-     {
-    	 num = st.pop();
-    	 System.out.format("%d,",num);
-    	 
-     }   
-
-     
-    SingleLinkedListVik sllv = new SingleLinkedListVik();
-    sllv.addnode(10);
-    sllv.addnode(20);
-    sllv.addnode(30);
-    sllv.addnode(10);
-    sllv.addnode(20);
-    sllv.addnode(30);
-    sllv.addnode(40);
-    System.out.println("Linked list before removal of node is as below");
-    SingleLinkNode runner = sllv.header;
-    while(runner!=null)
-    {
-    	System.out.print(runner.data+",");
-    	runner = runner.next;
-    }
-    System.out.println("");
-    Chapter3 ch3 = new Chapter3();
-    ch3.RmvDuplctFrmLinkedListApproach1(sllv);
-    //ch3.RmvDuplctFrmLinkedListApproach2(sllv);
+    /*Below code is testing methods for removing duplicate nodes from a single linked list*/ 
+//    SingleLinkedListVik sllv = new SingleLinkedListVik();
+//    sllv.addnode(10);
+//    sllv.addnode(20);
+//    sllv.addnode(30);
+//    sllv.addnode(10);
+//    sllv.addnode(20);
+//    sllv.addnode(30);
+//    sllv.addnode(40);
+//    System.out.println("Linked list before removal of duplicate nodes is as below");
+//    SingleLinkNode runner = sllv.header;
+//    while(runner!=null)
+//    {
+//    	System.out.print(runner.data+",");
+//    	runner = runner.next;
+//    }
+//    System.out.println("");
+//    Chapter3 ch3 = new Chapter3();
+//    ch3.RmvDuplctFrmLinkedListApproach1(sllv);
+//    //ch3.RmvDuplctFrmLinkedListApproach2(sllv);
+//    
+//    System.out.println("Linked list after removal of node is as below");
+//    runner = sllv.header;
+//    while(runner!=null)
+//    {
+//    	System.out.print(runner.data+",");
+//    	runner=runner.next;
+//    }
+//    System.out.println("");
     
-    System.out.println("Linked list after removal of node is as below");
-    runner = sllv.header;
-    while(runner!=null)
-    {
-    	System.out.print(runner.data+",");
-    	runner=runner.next;
-    }
-    System.out.println("");
+    SingleLinkedListVik slv2 = new SingleLinkedListVik();
+    slv2.addnode(10);
+    slv2.addnode(20);
+    slv2.addnode(30);
+    slv2.addnode(40);
+    slv2.addnode(50);
+    slv2.addnode(60);
+    
+    Chapter3 chap32 = new Chapter3();
+    int k =3;
+    int kthdata;
+    
+  // kthdata = chap32.LinkedListKthToLastApproach1(slv2, k);
+  //kthdata = chap32.LinkedListKthToLastApproach2(slv2, k);
+    kthdata = chap32.LinkedListKthToLastApproach3(slv2, k);
+    System.out.format("%d th position element from last is %d : ", k,kthdata);
+    
+    
+    /**/
 		}
 		catch(Exception ex)
 		{
 			System.out.println(ex.getMessage());
 		}
 	}
-
 }
