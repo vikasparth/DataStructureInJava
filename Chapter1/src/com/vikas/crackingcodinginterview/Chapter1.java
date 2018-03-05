@@ -48,7 +48,8 @@ public class Chapter1 {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+{
 		try
 		{
      Chapter1 c = new Chapter1();
@@ -144,29 +145,104 @@ public class Chapter1 {
 //    }
 //    System.out.println("");
     
-    SingleLinkedListVik slv2 = new SingleLinkedListVik();
-    slv2.addnode(10);
-    slv2.addnode(20);
-    slv2.addnode(30);
-    slv2.addnode(40);
-    slv2.addnode(50);
-    slv2.addnode(60);
+     /*Below code tests method to remove kth element from last for a SingleLinkedList*/
+//    SingleLinkedListVik slv2 = new SingleLinkedListVik();
+//    slv2.addnode(10);
+//    slv2.addnode(20);
+//    slv2.addnode(30);
+//    slv2.addnode(40);
+//    slv2.addnode(50);
+//    slv2.addnode(60);
+//    
+//    Chapter3 chap32 = new Chapter3();
+//    int k =3;
+//    int kthdata;
+//    
+//  // kthdata = chap32.LinkedListKthToLastApproach1(slv2, k);
+//  //kthdata = chap32.LinkedListKthToLastApproach2(slv2, k);
+//    kthdata = chap32.LinkedListKthToLastApproach3(slv2, k);
+//    System.out.format("%d th position element from last is %d : ", k,kthdata);
     
-    Chapter3 chap32 = new Chapter3();
-    int k =3;
-    int kthdata;
-    
-  // kthdata = chap32.LinkedListKthToLastApproach1(slv2, k);
-  //kthdata = chap32.LinkedListKthToLastApproach2(slv2, k);
-    kthdata = chap32.LinkedListKthToLastApproach3(slv2, k);
-    System.out.format("%d th position element from last is %d : ", k,kthdata);
-    
-    
-    /**/
+    /*Below code test deleting a node in linked list when header is not known*/
+//    SingleLinkedListVik slv3 = new SingleLinkedListVik();
+//    slv3.addnode(10);
+//    slv3.addnode(20);
+//    slv3.addnode(30);
+//    slv3.addnode(40);
+//    slv3.addnode(50);
+//    slv3.addnode(60);
+//  SingleLinkNode runner = slv3.header;
+//    for(int i =0;i<3;i++)
+//    {
+//    	runner=runner.next;
+//    }
+//    SingleLinkNode middle = runner;  
+//  System.out.println("Linked list before removal of duplicate nodes is as below");
+//  runner =  slv3.header;
+//  while(runner!=null)
+//  {
+//  	System.out.print(runner.data+",");
+//  	runner = runner.next;
+//  }
+//
+//  System.out.println("");
+//
+//  Chapter3 ch3 = new Chapter3();
+//  ch3.DeleteNodeInMiddle(middle);
+// 
+//  System.out.println("Linked list after removal of middle node is as below");
+//  runner = slv3.header;
+//  while(runner!=null)
+//  {
+//  	System.out.print(runner.data+",");
+//  	runner=runner.next;
+//  }
+  
+  /*Below code tests the approach where we partition a linked list around a number*/
+  Chapter3 ch3 = new Chapter3();
+  SingleLinkedListVik slv4 = new SingleLinkedListVik();
+  slv4.addnode(3);
+  slv4.addnode(5);
+  slv4.addnode(8);
+  slv4.addnode(5);
+  slv4.addnode(10);
+  slv4.addnode(2);
+  slv4.addnode(1);
+  slv4.addnode(11);
+  slv4.addnode(21);
+  slv4.addnode(4);
+  SingleLinkNode runner = slv4.header;
+  System.out.println("Linkedlist before partition is as below");
+  runner =  slv4.header;
+  while(runner!=null)
+  {
+  	System.out.print(runner.data+",");
+  	runner = runner.next;
+  }
+
+  System.out.println("");
+  
+ // slv4 = ch3.PartitionAroundElementApproach1(slv4, 5);
+  ch3.PartitionAroundElementApproach2(slv4, 5);
+  
+  System.out.println("Linkedlist after partition is as below");
+  runner =  slv4.header;
+  while(runner!=null)
+  {
+  	System.out.print(runner.data+",");
+  	runner = runner.next;
+  }
+
+  System.out.println("");
+  
+  System.out.println("");
 		}
 		catch(Exception ex)
 		{
 			System.out.println(ex.getMessage());
 		}
 	}
+
+
+
 }

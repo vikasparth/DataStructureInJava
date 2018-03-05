@@ -256,4 +256,142 @@ public class Chapter3 {
 		}
 		
 	}
+	public void DeleteNodeInMiddle(SingleLinkNode middle)
+	{
+		try
+		{
+		SingleLinkNode nextnode = middle.next;
+		middle.data = nextnode.data;
+		middle.next = nextnode.next;
+		nextnode.next = null;
+		}
+		catch(NullPointerException npe)
+		{
+			System.out.println(npe.getMessage());
+			System.out.println(npe.getStackTrace());
+		}
+	}
+
+	public SingleLinkedListVik PartitionAroundElementApproach1(SingleLinkedListVik slv,int pivot)
+	{
+		try
+		{
+			SingleLinkedListVik lesserElements = new SingleLinkedListVik();
+			SingleLinkedListVik higherElements = new SingleLinkedListVik();
+			SingleLinkNode runner = slv.header;
+			SingleLinkNode lrunner = null;
+			SingleLinkNode hrunner = null;
+			
+			while(runner!=null)
+			{
+				if(runner.data<pivot)
+				{
+					if(lesserElements.header==null)
+					{
+						lesserElements.header = new SingleLinkNode(runner.data);						
+						lrunner = lesserElements.header;
+					}
+					else
+					{
+						lrunner.next = new SingleLinkNode(runner.data);
+						lrunner = lrunner.next;
+					}
+				}
+				else
+				{
+					if(higherElements.header==null)
+					{
+						higherElements.header = new SingleLinkNode(runner.data);
+						hrunner = higherElements.header;
+					}
+					else
+					{
+						hrunner.next = new SingleLinkNode(runner.data);
+						hrunner = hrunner.next;
+					}
+				}
+				runner = runner.next;
+			}
+			if(!lesserElements.isempty())
+			{
+				lrunner.next = higherElements.header;
+				slv = lesserElements;
+			}
+			return slv;			
+		}
+		catch(NullPointerException npe)
+		{
+			System.out.print(npe.getMessage());
+			System.out.println(npe.getStackTrace());
+			return new SingleLinkedListVik();
+		}
+	}
+   
+	/*Below approach implements by maintaining leserPoint and higerPointer to adjust nodes*/
+	public boolean PartitionAroundElementApproach2(SingleLinkedListVik slv,int pivot)
+    {
+    	try
+    	{
+    		if(slv.isempty())
+    		{
+    			return false;
+    		}
+    		if(slv.issinglelength())
+    		{
+    			return false;
+    		}
+    		
+    		SingleLinkNode lessPoint=null;
+    		SingleLinkNode highPoint=null;
+    		SingleLinkNode runner=null;
+    		SingleLinkNode previous=null;
+    		runner = slv.header;
+    		
+    		while(runner!=null)
+    		{
+    			if(runner.data<pivot)
+    			{
+    				if(previous==lessPoint ||  lessPoint == null)
+    				{
+    				lessPoint = runner;
+    				previous = runner;
+    				runner = runner.next;
+    				}
+    				else
+    				{
+    				 previous.next = runner.next;    				 
+    				 runner.next = lessPoint.next;
+    				 lessPoint.next = runner;
+    				 lessPoint = runner;
+    				 runner = previous.next;
+    				}
+    			}
+    			else
+    			{
+    				if(previous==highPoint || highPoint == null)
+    				{
+    				highPoint = runner;
+    				previous = runner;
+    				runner = runner.next;
+    				}
+    				else
+    				{
+    				 previous.next = runner.next;    				 
+       				 runner.next = highPoint.next;
+       				 highPoint.next = runner;
+       				 highPoint = runner;
+       				 runner = previous.next;
+    				}
+    			}
+    		}
+    		 return true;    	
+    	}
+    	catch(NullPointerException npe)
+    	{
+    		System.out.println(npe.getMessage());
+    		System.out.println(npe.getStackTrace());
+    		return false;
+    	}
+    }
+
 }
