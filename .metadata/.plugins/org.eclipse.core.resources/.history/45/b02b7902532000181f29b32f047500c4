@@ -404,26 +404,20 @@ public class Chapter3 {
 			if(slv.issinglelength())
 			{
 				return false;
-			}		
+			}
+		SingleLinkNode head = slv.header;
 		SingleLinkNode runner = slv.header;
 		SingleLinkNode previous = null;
 		while(runner!=null)
 		{
 			if(runner.data<pivot && previous!=null)
 			{
-				previous.next = runner.next;				
-				runner.next = slv.header;
-				slv.header = runner;
-				runner = previous.next;
-				
+				previous.next = runner.next;
+				runner.next = head;
+				head = runner;
 			}
-			else
-			{
-				previous = runner;
-				runner = runner.next;
-			}
+			
 		}
-		return true;
 		}
 		catch(NullPointerException npe)
 		{
