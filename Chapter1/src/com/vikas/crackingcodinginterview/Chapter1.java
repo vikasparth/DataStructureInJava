@@ -199,45 +199,79 @@ public class Chapter1 {
 //  }
   
   /*Below code tests the approach where we partition a linked list around a number*/
-  Chapter3 ch3 = new Chapter3();
-  SingleLinkedListVik slv4 = new SingleLinkedListVik();
-  slv4.addnode(3);
-  slv4.addnode(5);
-  slv4.addnode(8);
-  slv4.addnode(5);
-  slv4.addnode(10);
-  slv4.addnode(2);
-  slv4.addnode(1);
-  slv4.addnode(11);
-  slv4.addnode(21);
-  slv4.addnode(4);
-  SingleLinkNode runner = slv4.header;
-  System.out.println("Linkedlist before partition is as below");
-  runner =  slv4.header;
-  while(runner!=null)
-  {
-  	System.out.print(runner.data+",");
-  	runner = runner.next;
-  }
+//  Chapter3 ch3 = new Chapter3();
+//  SingleLinkedListVik slv4 = new SingleLinkedListVik();
+//  slv4.addnode(3);
+//  slv4.addnode(5);
+//  slv4.addnode(8);
+//  slv4.addnode(5);
+//  slv4.addnode(10);
+//  slv4.addnode(2);
+//  slv4.addnode(1);
+//  slv4.addnode(11);
+//  slv4.addnode(21);
+//  slv4.addnode(4);
+//  SingleLinkNode runner = slv4.header;
+//  System.out.println("Linkedlist before partition is as below");
+//  runner =  slv4.header;
+//  while(runner!=null)
+//  {
+//  	System.out.print(runner.data+",");
+//  	runner = runner.next;
+//  }
+//
+//  System.out.println("");
+//  
+// // slv4 = ch3.PartitionAroundElementApproach1(slv4, 5);
+////  ch3.PartitionAroundElementApproach2(slv4, 5);
+//  ch3.PartitionAroundElementApproach3(slv4, 5);
+//  
+//  System.out.println("Linkedlist after partition is as below");
+//  runner =  slv4.header;
+//  while(runner!=null)
+//  {
+//  	System.out.print(runner.data+",");
+//  	runner = runner.next;
+//  }
 
-  System.out.println("");
+/*Below code tests approach to add two numbers represented by 2 linked lists*/
+//  Chapter3 ch32 = new Chapter3();
+//  SingleLinkedListVik slv51 = new SingleLinkedListVik();
+//  SingleLinkedListVik slv52 = new SingleLinkedListVik();
+//  
+//  slv51.addnode(7);
+//  slv51.addnode(1);
+//  slv51.addnode(6);
+//  
+//  slv52.addnode(5);
+//  slv52.addnode(9);
+//  slv52.addnode(5);
+////  slv52.addnode(4);
+  //ch32.SumLists(slv51.header, slv52.header);
+ /// ch32.SumListsFollowup(slv51.header, slv52.header);
   
- // slv4 = ch3.PartitionAroundElementApproach1(slv4, 5);
-//  ch3.PartitionAroundElementApproach2(slv4, 5);
-  ch3.PartitionAroundElementApproach3(slv4, 5);
+  Chapter3 ch33 = new Chapter3();
+  SingleLinkedListVik slv6 = new SingleLinkedListVik();
   
-  System.out.println("Linkedlist after partition is as below");
-  runner =  slv4.header;
-  while(runner!=null)
+  slv6.addnode(1);
+  slv6.addnode(2);
+  slv6.addnode(3);
+  slv6.addnode(2);
+  slv6.addnode(1);
+  
+  if(ch33.isLinkedListPalindromeApproach1(slv6))
   {
-  	System.out.print(runner.data+",");
-  	runner = runner.next;
+	  System.out.println("Oh Yes!!! Your string is a Palindrome");
   }
-
-  System.out.println("");
+  else
+  {
+	  System.out.println("I am sorry, but your string is not a Palindrome :(");
+  }
+  
   
   System.out.println("");
-		}
+  
+}
 		catch(Exception ex)
 		{
 			System.out.println(ex.getMessage());

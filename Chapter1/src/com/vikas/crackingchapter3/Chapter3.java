@@ -7,6 +7,14 @@ public class Chapter3 {
 	private int countdown;
 	private int countup;
 	private int data;
+	private boolean isPalindrome;
+	
+	private class PartialSum
+	{
+		int sum = 0;
+		int carry = 0;
+	}
+	
 	/*Below approach removed duplicate from a linked list by using HashTable*/
 	public boolean RmvDuplctFrmLinkedListApproach1(SingleLinkedListVik slv)
 	{
@@ -432,4 +440,192 @@ public class Chapter3 {
 			return false;
 		}
 	}
+    
+	public void SumLists(SingleLinkNode l1, SingleLinkNode l2)
+	{
+		try{
+			
+			addListByRecursion(l1,l2,0);
+			
+		}
+		catch(NullPointerException npe)
+		{
+			System.out.println(npe.getMessage());
+			System.out.println(npe.getStackTrace());			
+		}
+		
+	}
+	private void addListByRecursion(SingleLinkNode l1, SingleLinkNode l2, int carry)
+	{
+		try{
+			if(l1==null && l2 ==null)
+			{
+				return;
+			}
+			int num1=0;
+			int num2=0;
+			int sum = 0;
+			int value=0;
+			if(l1!=null)
+			{
+				num1 = l1.data;
+				l1 = l1.next;
+			}
+			if(l2!=null)
+			{
+				num2 = l2.data;
+				l2 = l2.next;
+			}
+			sum = num1 + num2+carry;
+			carry = sum/10;			
+			
+			if(l1 == null && l2 ==null)
+			{
+				value = sum;
+			}
+			else
+			{
+			value = sum%10;
+			}
+			addListByRecursion(l1,l2,carry);
+			
+			System.out.print(value);
+		}
+		catch(NullPointerException npe)
+		{
+			System.out.println(npe.getMessage());
+			System.out.println(npe.getStackTrace());			
+		}
+		
+	}
+	
+	
+	public void SumListsFollowup(SingleLinkNode l1, SingleLinkNode l2)
+	{
+		try{
+			
+			addListByRecursionFollowUp(l1,l2,0,l1,l2);
+			
+		}
+		catch(NullPointerException npe)
+		{
+			System.out.println(npe.getMessage());
+			System.out.println(npe.getStackTrace());			
+		}
+	}
+	
+	/*Vikas - Below method needs to be fixed, I shall come back to it*/
+	private PartialSum addListByRecursionFollowUp(SingleLinkNode l1, SingleLinkNode l2, int carry, SingleLinkNode l1Header, SingleLinkNode l2Header)
+	{
+		try{
+			int num1=0;
+			int num2=0;
+			int sum = 0;
+			int value=0;
+			if(l1.next==null && l2.next ==null)
+			{
+				PartialSum psum = new PartialSum();
+				psum.sum = (l1.data + l2.data) % 10;
+				psum.carry = (l1.data + l2.data) / 10;
+				return psum;				
+			}
+			
+			if(l1.next!=null)
+			{				
+				l1 = l1.next;
+			}
+			if(l2.next!=null)
+			{				
+				l2 = l2.next;
+			}
+			PartialSum psum;
+			psum = addListByRecursionFollowUp(l1,l2,carry,l1Header,l2Header);
+			System.out.print(psum.sum);
+			num1 = l1.data;
+			num2=l2.data;
+			
+			psum.sum = num1 + num2 + psum.carry;
+			carry = sum/10;	
+			if(l1 == l1Header && l2 ==l2Header)
+			{
+				value = sum;
+			}
+			else
+			{
+			value = sum%10;
+			}
+			
+			return psum;
+			//System.out.print(value);
+		}
+		catch(NullPointerException npe)
+		{
+			System.out.println(npe.getMessage());
+			System.out.println(npe.getStackTrace());		
+			PartialSum psum2 = null;
+			return psum2;
+		}
+		
+	}
+
+
+	public boolean isLinkedListPalindromeApproach1(SingleLinkedListVik slv)
+	{
+		try{
+			
+			if(slv.isempty())
+			{
+				System.out.println("Linked list is empty, not valid to be checked for Palindrome");
+				return false;
+			}
+		
+			if(slv.issinglelength())
+			{
+				System.out.println("There is only one element in list, so i guess you can call it Palindrome");
+				return true;
+			}
+			isPalindrome = true;
+			SingleLinkNode header = slv.header;			
+			checkListPalindrome(header,header);		
+			
+			return isPalindrome;
+		}
+		catch(NullPointerException npe )
+		{
+			System.out.println(npe.getMessage());
+			System.out.println(npe.getStackTrace());	
+			return false;
+		}
+		
+	}
+	
+	private SingleLinkNode checkListPalindrome(SingleLinkNode runner1,SingleLinkNode runner2)
+	{	
+		try{
+		if(runner2==null)
+		{
+			//Return the header node when linked list end is returned
+		  return runner1;
+		}
+		runner2 = runner2.next;
+	    runner1 = checkListPalindrome(runner1,runner2);		
+	   if(runner2!=null)
+		{
+		   if( runner1.data!=runner2.data)
+		   {
+				isPalindrome = false;
+		   }
+		   // Now after runner2 has reached end runner1 will start walking from header
+		   runner1 = runner1.next;
+		}
+	   // By returning the updated value of runner1, each unwinding will move a step forward in linked list
+	   return runner1;
+	}
+	catch(NullPointerException npe )
+	{
+		System.out.println(npe.getMessage());
+		System.out.println(npe.getStackTrace());	
+		return null;
+	}
+	}	
 }
