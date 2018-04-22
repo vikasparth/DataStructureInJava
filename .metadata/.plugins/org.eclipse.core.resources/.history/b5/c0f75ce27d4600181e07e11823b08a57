@@ -250,23 +250,23 @@ public class Chapter1 {
   //ch32.SumLists(slv51.header, slv52.header);
  /// ch32.SumListsFollowup(slv51.header, slv52.header);
   
-//  Chapter3 ch33 = new Chapter3();
-//  SingleLinkedListVik slv6 = new SingleLinkedListVik();
-//  
-//  slv6.addnode(1);
-//  slv6.addnode(2);
-//  slv6.addnode(3);
-//  slv6.addnode(2);
-//  slv6.addnode(1);
-//  
-//  if(ch33.isLinkedListPalindromeApproach1(slv6))
-//  {
-//	  System.out.println("Oh Yes!!! Your string is a Palindrome");
-//  }
-//  else
-//  {
-//	  System.out.println("I am sorry, but your string is not a Palindrome :(");
-//  }
+  Chapter3 ch33 = new Chapter3();
+  SingleLinkedListVik slv6 = new SingleLinkedListVik();
+  
+  slv6.addnode(1);
+  slv6.addnode(2);
+  slv6.addnode(3);
+  slv6.addnode(2);
+  slv6.addnode(1);
+  
+  if(ch33.isLinkedListPalindromeApproach1(slv6))
+  {
+	  System.out.println("Oh Yes!!! Your string is a Palindrome");
+  }
+  else
+  {
+	  System.out.println("I am sorry, but your string is not a Palindrome :(");
+  }
   
   Chapter3 ch34 = new Chapter3();
   SingleLinkedListVik slv7 = new SingleLinkedListVik();
@@ -292,11 +292,11 @@ public class Chapter1 {
   intersectionNode = ch34.checkListsIntersection(slv7.header,slv8.header);
   if(intersectionNode==null)
   {
-	  System.out.println("Given linked lists do not intersect");
+	  System.out.println("Given strings do not intersect");
   }
   else
   {
-	  System.out.println("Given linked lists intersect at node with value::"+intersectionNode.data);
+	  System.out.println("Given strings intersect at node with value::"+intersectionNode.data);
   }
   System.out.println("");
   

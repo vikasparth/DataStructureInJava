@@ -685,7 +685,7 @@ public class Chapter3 {
 				System.out.println("Given linked lists do not intersect");
 			}
 		}
-		
+		}
 		if(validate.flag)
 		{
 			if(list1!=list2)
@@ -697,7 +697,6 @@ public class Chapter3 {
 				}
 			}
 		}		
-		}
 		}
 		catch(NullPointerException npe)
 		{

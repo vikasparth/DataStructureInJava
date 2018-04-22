@@ -670,8 +670,6 @@ public class Chapter3 {
 		list2 = list2.next;
 		}
 		checkListsIntersectionRecurse(list1,list2,validate);
-		if(list1!=null && list2!=null)
-		{
 		if(list1.next == null && list2.next == null)
 		{
 			if(list1 == list2)
@@ -685,7 +683,6 @@ public class Chapter3 {
 				System.out.println("Given linked lists do not intersect");
 			}
 		}
-		
 		if(validate.flag)
 		{
 			if(list1!=list2)
@@ -697,7 +694,6 @@ public class Chapter3 {
 				}
 			}
 		}		
-		}
 		}
 		catch(NullPointerException npe)
 		{

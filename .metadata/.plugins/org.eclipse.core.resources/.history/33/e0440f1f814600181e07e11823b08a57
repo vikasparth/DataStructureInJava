@@ -282,12 +282,12 @@ public class Chapter1 {
   slv8.addnode(5);
   SingleLinkNode intersectionNode = null;
   SingleLinkNode runner = slv7.header;
-  for(int i =0; i<3;i++)
-  {
-	  runner = runner.next;
-  }
-  slv8.tail.next = runner;
-  slv8.tail = slv7.tail;
+//  for(int i =0; i<3;i++)
+//  {
+//	  runner = runner.next;
+//  }
+//  slv8.tail.next = runner;
+//  slv8.tail = slv7.tail;
   
   intersectionNode = ch34.checkListsIntersection(slv7.header,slv8.header);
   if(intersectionNode==null)

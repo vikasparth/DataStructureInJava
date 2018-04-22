@@ -16,11 +16,6 @@ public class Chapter3 {
 		int sum = 0;
 		int carry = 0;
 	}
-	private class Intersection
-	{
-		SingleLinkNode intersectionNode;
-		boolean flag;
-	}
 	
 	/*Below approach removed duplicate from a linked list by using HashTable*/
 	public boolean RmvDuplctFrmLinkedListApproach1(SingleLinkedListVik slv)
@@ -636,30 +631,19 @@ public class Chapter3 {
 	}
 	}	
 
-	public SingleLinkNode checkListsIntersection(SingleLinkNode list1, SingleLinkNode list2)
+	public SingleLinkNode checkListsIntersection()
 	{
-		try
-		{
-			Intersection validate = new Intersection();
-			validate.flag = true;
-			validate.intersectionNode = null;
-		    checkListsIntersectionRecurse(list1,list2,validate);
-			return validate.intersectionNode;
-		}
-		catch(NullPointerException npe)
-		{
-			System.out.println(npe.getMessage());
-			System.out.println(npe.getStackTrace());
-			return null;
-		}
+		
+		
+		return null;
 	}
 	
-	private void checkListsIntersectionRecurse(SingleLinkNode list1, SingleLinkNode list2,Intersection validate)
+	public SingleLinkNode checkListsIntersectionRecurse(SingleLinkNode list1, SingleLinkNode list2)
 	{
 		try{
-		if(list1==null && list2==null)
+		if(list1==null && list2 ==null)
 		{
-			return;
+			return null;
 		}
 		if(list1!=null)
 		{
@@ -669,41 +653,24 @@ public class Chapter3 {
 		{
 		list2 = list2.next;
 		}
-		checkListsIntersectionRecurse(list1,list2,validate);
-		if(list1!=null && list2!=null)
-		{
+		checkListsIntersectionRecurse(list1,list2);
 		if(list1.next == null && list2.next == null)
 		{
 			if(list1 == list2)
 			{
-				validate.flag = true;
-				System.out.println("Given linked lists intersect with each other");
+				System.out.print("Given linked lists intersect with each other");
 			}
 			else
 			{
-				validate.flag = false;
 				System.out.println("Given linked lists do not intersect");
 			}
 		}
 		
-		if(validate.flag)
-		{
-			if(list1!=list2)
-			{
-				if(list1.next == list2.next)
-				{
-					validate.intersectionNode = list1.next;
-					validate.flag = false;
-				}
-			}
-		}		
-		}
 		}
 		catch(NullPointerException npe)
 		{
 			System.out.println(npe.getMessage());
 			System.out.println(npe.getStackTrace());
-		    return;
 		}
 	}
 
